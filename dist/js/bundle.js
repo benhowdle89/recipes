@@ -23181,39 +23181,7 @@ var App = function (_React$Component) {
 
 exports.default = App;
 
-},{"./containers/index.jsx":193,"./reducers/":195,"react":178,"react-redux":45,"redux":184}],190:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Footer = function Footer() {
-    return _react2.default.createElement(
-        "footer",
-        { className: "p3 pl3 border-top" },
-        _react2.default.createElement(
-            "div",
-            { className: "h3" },
-            "Made by ",
-            _react2.default.createElement(
-                "a",
-                { href: "http://benhowdle.im" },
-                "Ben Howdle"
-            )
-        )
-    );
-};
-
-exports.default = Footer;
-
-},{"react":178}],191:[function(require,module,exports){
+},{"./containers/index.jsx":192,"./reducers/":194,"react":178,"react-redux":45,"redux":184}],190:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23232,7 +23200,10 @@ var Header = function Header() {
         { className: "p3 pl3" },
         _react2.default.createElement(
             "div",
-            { className: "h1 center" },
+            { className: "h1 center", style: {
+                    color: '#484B54',
+                    fontWeight: '700'
+                } },
             "Recipes"
         )
     );
@@ -23240,7 +23211,7 @@ var Header = function Header() {
 
 exports.default = Header;
 
-},{"react":178}],192:[function(require,module,exports){
+},{"react":178}],191:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23262,12 +23233,39 @@ var Recipes = function Recipes(_ref) {
 
     return _react2.default.createElement(
         'div',
-        { className: 'list flex items-center pb4' },
+        { className: 'grid flex items-center flex-wrap pb4' },
         recipes.map(function (recipe) {
             return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement('img', { src: makeImageLink(recipe.name) })
+                'figure',
+                { className: 'col-6 effect-duke' },
+                _react2.default.createElement('img', { src: makeImageLink(recipe.name) }),
+                _react2.default.createElement(
+                    'figcaption',
+                    null,
+                    _react2.default.createElement(
+                        'h2',
+                        null,
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            recipe.chef
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'recipe-name ml1' },
+                            recipe.name
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'p',
+                        null,
+                        _react2.default.createElement(
+                            'a',
+                            { href: recipe.link },
+                            recipe.buy ? 'Buy book' : 'View recipe'
+                        )
+                    )
+                )
             );
         })
     );
@@ -23275,7 +23273,7 @@ var Recipes = function Recipes(_ref) {
 
 exports.default = Recipes;
 
-},{"react":178}],193:[function(require,module,exports){
+},{"react":178}],192:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23297,10 +23295,6 @@ var _lodash2 = _interopRequireDefault(_lodash);
 var _header = require('./../components/header.jsx');
 
 var _header2 = _interopRequireDefault(_header);
-
-var _footer = require('./../components/footer.jsx');
-
-var _footer2 = _interopRequireDefault(_footer);
 
 var _recipes = require('./../components/recipes.jsx');
 
@@ -23330,8 +23324,7 @@ var Index = function (_React$Component) {
                 'div',
                 null,
                 _react2.default.createElement(_header2.default, null),
-                _react2.default.createElement(_recipes2.default, { recipes: this.props.recipes }),
-                _react2.default.createElement(_footer2.default, null)
+                _react2.default.createElement(_recipes2.default, { recipes: this.props.recipes })
             );
         }
     }]);
@@ -23351,7 +23344,7 @@ function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, null)(Index);
 
-},{"./../components/footer.jsx":190,"./../components/header.jsx":191,"./../components/recipes.jsx":192,"lodash.groupby":30,"react":178,"react-redux":45}],194:[function(require,module,exports){
+},{"./../components/header.jsx":190,"./../components/recipes.jsx":191,"lodash.groupby":30,"react":178,"react-redux":45}],193:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -23370,7 +23363,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.getElementById('app'));
 
-},{"./app":189,"react":178,"react-dom":42}],195:[function(require,module,exports){
+},{"./app":189,"react":178,"react-dom":42}],194:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23389,7 +23382,7 @@ var reducers = {
 
 exports.default = reducers;
 
-},{"./recipes":196}],196:[function(require,module,exports){
+},{"./recipes":195}],195:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23401,49 +23394,57 @@ var initialState = {
         name: 'balinese chicken curry',
         chef: 'Jamie Oliver',
         description: '',
-        link: '',
+        link: 'https://www.amazon.co.uk/Super-Family-Classics-Jamie-Oliver/dp/0718178440',
+        buy: true,
         meal_tags: ['lunch', 'dinner']
     }, {
         name: 'berry pocket eggy bread',
         chef: 'Jamie Oliver',
         description: '',
-        link: '',
+        link: 'https://www.amazon.co.uk/Super-Family-Classics-Jamie-Oliver/dp/0718178440',
+        buy: true,
         meal_tags: ['breakfast']
     }, {
         name: 'bombay chicken and cauliflower',
         chef: 'Jamie Oliver',
         description: '',
-        link: '',
+        link: 'https://www.amazon.co.uk/dp/0718181239/ref=pd_lpo_sbs_dp_ss_1?pf_rd_p=569136327&pf_rd_s=lpo-top-stripe&pf_rd_t=201&pf_rd_i=0718178440&pf_rd_m=A3P5ROKL5A1OLE&pf_rd_r=VZE8QKHVBTYJVEAVDBJP',
+        buy: true,
         meal_tags: ['lunch', 'dinner']
     }, {
         name: 'breakfast doughnuts',
         chef: 'Jamie Oliver',
         description: '',
-        link: '',
+        link: 'https://www.amazon.co.uk/Super-Family-Classics-Jamie-Oliver/dp/0718178440',
+        buy: true,
         meal_tags: ['breakfast']
     }, {
         name: 'insanity burger',
         chef: 'Jamie Oliver',
         description: '',
-        link: '',
+        link: 'https://www.amazon.co.uk/Jamies-Comfort-Food-Jamie-Oliver/dp/0718159535/ref=sr_1_1?s=books&ie=UTF8&qid=1481667808&sr=1-1&keywords=jamie+oliver+comfort+food',
+        buy: true,
         meal_tags: ['dinner']
     }, {
         name: 'juicy griddled steak',
         chef: 'Jamie Oliver',
         description: '',
-        link: '',
+        link: 'https://www.amazon.co.uk/dp/0718181239/ref=pd_lpo_sbs_dp_ss_1?pf_rd_p=569136327&pf_rd_s=lpo-top-stripe&pf_rd_t=201&pf_rd_i=0718178440&pf_rd_m=A3P5ROKL5A1OLE&pf_rd_r=VZE8QKHVBTYJVEAVDBJP',
+        buy: true,
         meal_tags: ['dinner']
     }, {
         name: 'moroccan chicken with sweet potato mash',
         chef: 'BBC Good Food',
         description: '',
-        link: '',
+        link: 'http://www.bbcgoodfood.com/recipes/764636/moroccan-chicken-with-sweet-potato-mash',
+        buy: false,
         meal_tags: ['lunch', 'dinner']
     }, {
         name: 'tomatoes chorizo and egg',
         chef: 'Joe Wicks',
         description: '',
-        link: '',
+        link: 'https://www.amazon.co.uk/d/Books/Lean-Minute-Meals-Workouts-Keep-You-Healthy/1509800662/ref=sr_1_1?s=books&ie=UTF8&qid=1481667840&sr=1-1&keywords=joe+wick+lean+in+15',
+        buy: true,
         meal_tags: ['lunch']
     }]
 };
@@ -23454,4 +23455,4 @@ function recipesState() {
     return state;
 }
 
-},{}]},{},[194]);
+},{}]},{},[193]);

@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import groupBy from 'lodash.groupby'
 
 import Header from './../components/header.jsx'
-import Footer from './../components/footer.jsx'
 import Recipes from './../components/recipes.jsx'
 
 class Index extends React.Component {
@@ -12,7 +11,6 @@ class Index extends React.Component {
             <div>
                 <Header />
                 <Recipes recipes={this.props.recipes} />
-                <Footer />
             </div>
         )
     }
