@@ -5,6 +5,9 @@
   vertical-align: baseline;
   box-sizing: border-box; }
 
+html {
+  font-size: 16px; }
+
 html,
 body {
   height: 100%; }
@@ -13,7 +16,8 @@ body {
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   background: #2f3238;
-  color: #fff; }
+  color: #fff;
+  line-height: 1.65; }
 
 img {
   max-width: 100%;
@@ -85,7 +89,8 @@ footer {
 
 .grid figure h2 {
   word-spacing: -0.15em;
-  font-weight: 300; }
+  font-weight: 300;
+  font-size: 1.8rem; }
 
 .grid figure h2 span.recipe-name {
   font-weight: 800;
@@ -126,7 +131,7 @@ figure.effect-duke p {
   bottom: 0;
   left: 0;
   margin: 20px;
-  border: 2px solid #fff;
+  outline: 2px solid #fff;
   text-transform: none;
   font-size: 90%;
   opacity: 0;
@@ -149,8 +154,10 @@ figure.effect-duke:active p {
 
 figure.effect-duke p:hover, figure.effect-duke p:active {
   background: rgba(255, 255, 255, 0.3);
-  font-weight: 700; }
+  font-weight: 500; }
 
 @media (max-width: 700px) {
   figure {
-    width: 100% !important; } }
+    width: 100% !important; }
+  .grid figure h2 {
+    font-size: 1.2rem; } }

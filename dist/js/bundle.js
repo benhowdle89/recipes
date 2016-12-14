@@ -23197,14 +23197,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Header = function Header() {
     return _react2.default.createElement(
         "header",
-        { className: "p3 pl3 mt4" },
+        { className: "p3 pl3 mt2" },
         _react2.default.createElement(
-            "div",
-            { className: "h1 center", style: {
-                    color: '#7e828c',
-                    fontWeight: '700'
+            "p",
+            { className: "h3 my2 max-width-3 center mx-auto", style: {
+                    color: '#7e828c'
                 } },
-            "Recipes"
+            "The images below are a selection of my cooking that I posted to Instagram. I recently deleted my Instagram account and I figured people might be interested in the recipes from the pictures."
         )
     );
 };
@@ -23455,7 +23454,7 @@ var initialState = {
         buy: true,
         meal_tag: 'dinner'
     }, {
-        name: 'moroccan chicken with sweet potato mash',
+        name: 'moroccan chicken',
         chef: 'BBC Good Food',
         description: '',
         link: 'http://www.bbcgoodfood.com/recipes/764636/moroccan-chicken-with-sweet-potato-mash',

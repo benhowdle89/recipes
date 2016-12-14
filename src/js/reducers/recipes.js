@@ -49,7 +49,7 @@ const initialState = {
             meal_tag: 'dinner'
         },
         {
-            name: 'moroccan chicken with sweet potato mash',
+            name: 'moroccan chicken',
             chef: 'BBC Good Food',
             description: '',
             link: 'http://www.bbcgoodfood.com/recipes/764636/moroccan-chicken-with-sweet-potato-mash',
