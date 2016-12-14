@@ -8,7 +8,7 @@ import Recipes from './../components/recipes.jsx'
 class Index extends React.Component {
     render() {
         return (
-            <div>
+            <div className="px2">
                 <Header />
                 <Recipes recipes={this.props.recipes} />
             </div>
@@ -17,12 +17,12 @@ class Index extends React.Component {
 }
 
 Index.propTypes = {
-    recipes: PropTypes.array.isRequired
+    recipes: PropTypes.object.isRequired
 }
 
 function mapStateToProps(state) {
     return {
-        recipes: state.recipesState.recipes
+        recipes: groupBy(state.recipesState.recipes, 'meal_tag')
     }
 }
 

@@ -2,9 +2,9 @@ import React from 'react'
 
 const Header = () => {
     return (
-        <header className="p3 pl3">
+        <header className="p3 pl3 mt4">
             <div className="h1 center" style={{
-                color: '#484B54',
+                color: '#7e828c',
                 fontWeight: '700'
             }}>Recipes</div>
         </header>
