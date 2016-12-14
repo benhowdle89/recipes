@@ -22,7 +22,7 @@ const Recipes = ({ recipes }) => {
                                             <span className="recipe-name ml1">{ recipe.name }</span>
                                         </h2>
                             			<p>
-                                            <a href={ recipe.link }>{ recipe.buy ? 'Buy book' : 'View recipe' }</a>
+                                            <a href={ recipe.link }>{ recipe.buy ? 'Buy the book' : 'View recipe' }</a>
                                         </p>
                                     </figcaption>
                                 </figure>

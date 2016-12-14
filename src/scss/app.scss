@@ -145,7 +145,6 @@ figure.effect-duke p {
 	bottom: 0;
 	left: 0;
 	margin: 20px;
-	padding: 20px;
 	border: 2px solid #fff;
 	text-transform: none;
 	font-size: 90%;
@@ -154,6 +153,11 @@ figure.effect-duke p {
 	transform: scale3d(0.8,0.8,1);
 	-webkit-transform-origin: 50% -100%;
 	transform-origin: 50% -100%;
+}
+
+figure.effect-duke p a {
+    padding: 20px;
+    display: block;
 }
 
 figure.effect-duke:hover h2,
