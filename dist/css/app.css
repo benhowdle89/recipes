@@ -108,7 +108,7 @@ figure.effect-duke p {
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s; }
 
-figure.effect-duke:hover img {
+figure.effect-duke:hover img, figure.effect-duke:active img {
   opacity: 0.1;
   -webkit-transform: scale3d(2, 2, 1);
   transform: scale3d(2, 2, 1); }
@@ -137,12 +137,14 @@ figure.effect-duke p {
   transform-origin: 50% -100%; }
 
 figure.effect-duke:hover h2,
-figure.effect-duke:hover p {
+figure.effect-duke:hover p,
+figure.effect-duke:active h2,
+figure.effect-duke:active p {
   opacity: 1;
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1); }
 
-figure.effect-duke p:hover {
+figure.effect-duke p:hover, figure.effect-duke p:active {
   background: rgba(255, 255, 255, 0.3);
   font-weight: 700; }
 
